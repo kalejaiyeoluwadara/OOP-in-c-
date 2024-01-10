@@ -3,16 +3,14 @@
 using namespace std;
 
 class Person{
+    private:
+    std::string name;
     public:
-    string name;
-    int age;
-    void printProfile(){
-        cout<<name<<" is " <<age<<" years old.\n";
+    void shout(){
+        cout<<"Hello world"<<endl;
     }
-}
+};
 int main(){
-	Person newperson;
-    newperson.name = "dara";
-    newperson.age = 12;
-    newperson.printProfile();
+    Person p;
+    p.shout();
 }
