@@ -20,6 +20,9 @@ public:
     string logname() {
         return name;
     }
+    virtual void printInfo(){
+        cout<<"Parent printInfo functio"<<endl;
+    }
 };
 
 // Employee class
@@ -35,6 +38,9 @@ public:
     void getDept(){
         cout<<this->department<<endl;
     }
+    void printInfo () override{
+        cout<<"child printInfo function"<<endl;
+    }
 };
 
 int main() {
@@ -42,5 +48,6 @@ int main() {
     cout << e.logname() << endl;
     e.setDept("math");
     e.getDept();
+    e.printInfo();
 }
 
