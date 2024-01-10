@@ -6,18 +6,20 @@ class Person{
     private:
     std::string name;
     public:
+    Person(string name):name(name){}
+    Person() = default;
     void shout(){
         cout<<"Hello world"<<endl;
     }
     void setName(string name){
     	this->name = name;
 	}
-	void logname(){
-		cout<<name<<endl;
+	string logname(){
+		return name;
 	}
 };
 int main(){
-    Person p;
-    p.setName("dara");
-    p.logname();
+    Person p("dara");
+    cout<<p.logname()<<endl;
+    Person p3;
 }
