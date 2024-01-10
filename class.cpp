@@ -9,8 +9,15 @@ class Person{
     void shout(){
         cout<<"Hello world"<<endl;
     }
+    void setName(string name){
+    	this->name = name;
+	}
+	void logname(){
+		cout<<name<<endl;
+	}
 };
 int main(){
     Person p;
-    p.shout();
+    p.setName("dara");
+    p.logname();
 }
