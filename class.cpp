@@ -24,13 +24,23 @@ public:
 
 // Employee class
 class Employee : public Person {
+    string department;
 public:
     // Explicitly call the Person constructor in the initializer list
-    Employee(string name) : Person(name) {}
+    Employee(string name,string department) : Person(name),department(department) {}
+    public:
+    void setDept(string dept){
+        this->department = dept;
+    }
+    void getDept(){
+        cout<<this->department<<endl;
+    }
 };
 
 int main() {
-    Employee e("dara"); // Use the Employee constructor with a name parameter
+    Employee e("dara","cs"); // Use the Employee constructor with a name parameter
     cout << e.logname() << endl;
+    e.setDept("math");
+    e.getDept();
 }
 
