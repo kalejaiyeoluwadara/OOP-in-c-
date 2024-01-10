@@ -2,24 +2,35 @@
 #include <string>
 using namespace std;
 
-class Person{
-    private:
-    std::string name;
-    public:
-    Person(string name):name(name){}
-    Person() = default;
-    void shout(){
-        cout<<"Hello world"<<endl;
+class Person {
+private:
+    string name;
+
+public:
+    Person(string name) : name(name) {}
+
+    void shout() {
+        cout << "Hello world" << endl;
     }
-    void setName(string name){
-    	this->name = name;
-	}
-	string logname(){
-		return name;
-	}
+
+    void setName(string name) {
+        this->name = name;
+    }
+
+    string logname() {
+        return name;
+    }
 };
-int main(){
-    Person p("dara");
-    cout<<p.logname()<<endl;
-    Person p3;
+
+// Employee class
+class Employee : public Person {
+public:
+    // Explicitly call the Person constructor in the initializer list
+    Employee(string name) : Person(name) {}
+};
+
+int main() {
+    Employee e("dara"); // Use the Employee constructor with a name parameter
+    cout << e.logname() << endl;
 }
+
